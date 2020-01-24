@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
-import { createSmurfs } from '../actions';
+import { fetchSmurfs, createSmurfs } from '../actions';
 
 const NewSmurf = props => {
 
@@ -10,6 +10,7 @@ const NewSmurf = props => {
     const onSubmit = data => {
         console.log(data);
         props.createSmurfs(data);
+        setTimeout(() => { props.fetchSmurfs(); }, 1000);
     }
 
     return (
@@ -27,6 +28,6 @@ const NewSmurf = props => {
 
 const mapStateToProps = state => {
     return state
-}
+};
 
-export default connect(mapStateToProps, {createSmurfs})(NewSmurf);
+export default connect(mapStateToProps, {fetchSmurfs, createSmurfs})(NewSmurf);
