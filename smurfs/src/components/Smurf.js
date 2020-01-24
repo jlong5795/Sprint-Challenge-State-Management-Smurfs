@@ -5,7 +5,6 @@ const Smurf = props => {
     return (
         <div key={props.key} className='smurf-container'>
             <p>Name: {props.name}</p>
-            <p>ID: {props.key}</p>
             <p>Age: {props.age}</p>
             <p>Height: {props.height}</p>
         </div>
